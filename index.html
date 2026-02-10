@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+
+<body>
+    <div id="header"></div>
+            <!-- Main content -->
+            <main>
+            <div class="content">
+                <h2>About This Page</h2>
+                <p></p>
+                <hr>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./section_1-1.html">Section 1.1: Computer Hardware: Organization, Architecture, and Operating
+                            Systems</a></li>
+                    <li><a href="./section_1-2.html">Section 1-2</a></li>
+                    <li><a href="./section_1-3.html">Section 1-3</a></li>
+                    <li><a href="./section_2-1.html">Section 2-1</a></li>
+                    <li><a href="./section_2-2.html">Section 2-2</a></li>
+                </ul>
+            </nav>
+            
+    </main>
+    <div id="footer"></div>
+</body>
+<script>
+    // Load header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+
+    // Load footer
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+</html>

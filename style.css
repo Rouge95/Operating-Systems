@@ -1,0 +1,150 @@
+/* style.css */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background: linear-gradient(
+    to right,
+    #28a745,
+    #007bff
+  );
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 40px 20px;
+  color: #333;
+}
+
+.btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007bff;
+}
+
+/* Base (mobile-first) */
+main {
+  padding: 0 5%; /* Small padding on mobile */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  margin: 0 auto; /* Center content */
+}
+
+/* Medium screens and up */
+@media (min-width: 768px) {
+  main {
+    padding: 0 18%; /* Wider padding on tablets and larger */
+    max-width: 1200px; /* Optional max width */
+  }
+}
+
+/* GitHub-style header in top corner */
+.github-header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.834
+  );
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 6px
+    rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.github-header a {
+  text-decoration: none;
+  color: #000000;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Existing banner styling */
+.banner {
+  background: linear-gradient(
+    to right,
+    #28a745,
+    #007bff
+  );
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* Main content (mobile-first readable width) */
+main {
+  padding: 0 5%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 0 18%;
+    max-width: 1200px;
+  }
+}
+
+/* Button styling */
+.btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007bff;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  font-size: 0.9rem;
+  margin: 15px 0;
+  color: #555;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #28a745; /* Green link to match theme */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #333; /* Current page */
+}

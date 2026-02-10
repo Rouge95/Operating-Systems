@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="index.html">Index</a> &gt;
+            <span>Section 1.1</span>
+        </nav>
+    
+        <div class="content">
+            <h2>Computer Hardware: Organization, Architecture, and Operating</h2>
+            <p></p>
+            <hr>
+        </div>
+
+        <div id="content">   
+            <h2>Blade Server</h2>
+            <p>
+                A <strong>blade</strong> server is a highly <em>modular</em> computing architecture in which multiple thin,
+                self-contained server boards—called <strong>blades</strong>—are inserted into a shared <em>chassis</em>. Each
+                blade contains its own <strong>CPU</strong>, <strong>memory</strong>, and minimal <em>I/O</em> components, while
+                the chassis provides shared <strong>power</strong>, <strong>cooling</strong>, <strong>networking</strong>, and
+                <strong>management</strong>.
+            </p>
+            <p>
+                The defining advantage of blade servers lies in their <strong>density</strong> and <strong>efficiency</strong>.
+                By consolidating infrastructure components, blade systems reduce physical space requirements, cabling
+                complexity, and energy consumption. They are widely used in <em>data centers</em>, where centralized
+                <strong>orchestration</strong>, rapid <strong>scalability</strong>, and simplified <strong>maintenance</strong>
+                are critical.
+            </p>
+            
+            <h2>Central Processing Unit (CPU)</h2>
+            <p>
+                The <strong>CPU</strong> is the primary <em>computational</em> component of a computer system, responsible for
+                executing <strong>instructions</strong> that constitute programs. It consists of several core subunits,
+                including the <strong>arithmetic logic unit</strong> (ALU), <strong>control unit</strong>,
+                <strong>registers</strong>, and increasingly complex <strong>cache</strong> hierarchies.
+            </p>
+            <p>
+                Conceptually, the CPU operates by repeatedly performing the <strong>fetch</strong>, <strong>decode</strong>, and
+                <strong>execute</strong> stages of the instruction cycle. Modern CPUs employ advanced techniques such as
+                <em>pipelining</em>, <em>out-of-order execution</em>, <em>branch prediction</em>, and <em>speculative
+                    execution</em> to maximize <strong>throughput</strong> and minimize <strong>latency</strong>.
+            </p>
+            
+            <h2>Clustered System</h2>
+            <p>
+                A <strong>clustered</strong> system is a collection of independent <em>computers</em>, known as
+                <strong>nodes</strong>, that work together as a single <strong>logical</strong> system. These nodes are
+                connected through a high-speed <strong>network</strong> and coordinate using specialized <em>software</em>.
+            </p>
+            <p>
+                Clusters are designed to provide <strong>high availability</strong>, <strong>load balancing</strong>, and
+                <strong>fault tolerance</strong>. If one node fails, another can take over its tasks, thereby minimizing
+                <em>downtime</em>. Clusters are fundamental to <strong>cloud computing</strong>, scientific <em>high-performance
+                    computing</em> (HPC), and large-scale <strong>distributed</strong> applications.
+            </p>
+            
+            <h2>Device Driver</h2>
+            <p>
+                A <strong>device</strong> driver is a specialized <em>software</em> component that enables the <strong>operating
+                    system</strong> to communicate with a specific <strong>hardware</strong> device. It acts as an abstraction
+                layer, translating generic OS requests into device-specific <em>commands</em>.
+            </p>
+            <p>
+                Drivers manage <strong>interrupts</strong>, control <strong>data transfer</strong>, and enforce <strong>hardware
+                    protocols</strong>. Without drivers, the operating system would need detailed knowledge of every hardware
+                implementation, making <strong>portability</strong> and <strong>scalability</strong> impractical.
+            </p>
+            
+            <h2>Direct Memory Access (DMA)</h2>
+            <p>
+                <strong>DMA</strong> is a mechanism that allows <em>I/O</em> devices to transfer data directly to or from
+                <strong>main memory</strong> without continuous CPU involvement. This is accomplished using a dedicated
+                <strong>DMA controller</strong>.
+            </p>
+            <p>
+                By bypassing the CPU for bulk transfers, DMA significantly reduces <strong>overhead</strong> and improves
+                overall <strong>system performance</strong>. The CPU initiates the transfer, but once configured, the DMA
+                controller manages the data movement independently, notifying the CPU via an <strong>interrupt</strong> upon
+                completion.
+            </p>
+            
+            <h2>Firmware and ROM (or EEPROM)</h2>
+            <p>
+                <strong>Firmware</strong> is low-level <em>software</em> embedded directly into <strong>non-volatile</strong>
+                memory such as <strong>ROM</strong> or <strong>EEPROM</strong>. It provides the foundational instructions
+                required to initialize and control hardware components.
+            </p>
+            <p>
+                Firmware is responsible for tasks such as <strong>bootstrapping</strong>, hardware
+                <strong>configuration</strong>, and system <strong>diagnostics</strong>. Unlike application software, firmware
+                persists across power cycles and operates at a <em>privileged</em> level, often before the operating system
+                loads.
+            </p>
+            
+            <h2>Input/Output (I/O) Devices</h2>
+            <p>
+                <strong>I/O</strong> devices facilitate <em>interaction</em> between a computer system and its external
+                environment. Input devices supply data to the system, while output devices convey processed
+                <strong>information</strong> to users or other systems.
+            </p>
+            <p>
+                These devices vary widely in <strong>speed</strong>, <strong>latency</strong>, and <strong>data format</strong>.
+                The operating system manages I/O through buffering, <em>interrupt handling</em>, and scheduling to ensure
+                efficient and reliable data exchange.
+            </p>
+            
+            <h2>Instruction–Execution Cycle</h2>
+            <p>
+                The <strong>instruction</strong>–execution cycle is the fundamental operational loop of a CPU. It consists of
+                sequential stages: <strong>fetch</strong>ing an instruction from memory, <strong>decode</strong>ing its meaning,
+                <strong>execute</strong>ing the operation, and optionally <strong>writing back</strong> results.
+            </p>
+            <p>
+                This cycle is repeated billions of times per second. Advanced processors overlap these stages through
+                <em>pipelining</em>, enabling multiple instructions to be processed concurrently at different stages, thereby
+                increasing <strong>throughput</strong>.
+            </p>
+            
+            <h2>Instruction Register</h2>
+            <p>
+                The <strong>instruction</strong> register is a small, high-speed <em>storage</em> location within the CPU that
+                holds the currently executing instruction. It serves as the direct input to the <strong>decoder</strong>.
+            </p>
+            <p>
+                By isolating the active instruction, the instruction register enables precise <strong>control</strong> over
+                execution and synchronization with other CPU components, such as the program <em>counter</em> and control unit.
+            </p>
+            
+            <h2>Memory and RAM (and DRAM)</h2>
+            <p>
+                <strong>Memory</strong> refers to the system’s ability to store data and instructions for immediate use.
+                <strong>RAM</strong> is volatile, high-speed memory that provides rapid access for the CPU during execution.
+            </p>
+            <p>
+                <strong>DRAM</strong> is the most common form of RAM, storing bits as electrical charges that must be
+                <em>periodically refreshed</em>. While slower than cache memory, DRAM offers a balance between
+                <strong>cost</strong>, <strong>capacity</strong>, and performance.
+            </p>
+            
+            <h2>Multiple Computing Cores</h2>
+            <p>
+                A <strong>multi-core</strong> processor integrates several independent <em>cores</em> within a single CPU chip.
+                Each core can execute instructions concurrently, enabling <strong>parallelism</strong>.
+            </p>
+            <p>
+                Multi-core designs improve <strong>throughput</strong> and energy <strong>efficiency</strong> compared to
+                increasing clock speed alone. Effective utilization requires <em>parallel software</em> and operating system
+                support.
+            </p>
+            
+            <h2>Multiprocessor System (Parallel Systems)</h2>
+            <p>
+                A <strong>multiprocessor</strong> system contains multiple CPUs that cooperate to execute tasks in
+                <em>parallel</em>. These systems share memory or communicate through interconnects.
+            </p>
+            <p>
+                Parallel systems enhance <strong>performance</strong>, <strong>reliability</strong>, and
+                <strong>scalability</strong>, but introduce challenges such as synchronization, <em>deadlock</em>, and load
+                balancing.
+            </p>
+            
+            <h2>Non-Uniform Memory Access (NUMA)</h2>
+            <p>
+                <strong>NUMA</strong> is a memory architecture in which access time depends on the <em>location</em> of memory
+                relative to the processor. Local memory is accessed faster than remote memory.
+            </p>
+            <p>
+                NUMA improves <strong>scalability</strong> for large multiprocessor systems but requires <em>memory-aware</em>
+                operating systems and applications to avoid performance degradation.
+            </p>
+            
+            <h2>Small Computer System Interface (SCSI)</h2>
+            <p>
+                <strong>SCSI</strong> is a set of standards for connecting and transferring data between computers and
+                <em>peripheral</em> devices, particularly storage.
+            </p>
+            <p>
+                SCSI supports <strong>multiple devices</strong> on a single bus and offers robust <strong>performance</strong>,
+                reliability, and command queuing, making it common in enterprise environments.
+            </p>
+            
+            <h2>Storage-Area Network (SAN)</h2>
+            <p>
+                A <strong>SAN</strong> is a specialized, high-speed <em>network</em> that provides block-level access to
+                consolidated <strong>storage</strong>.
+            </p>
+            <p>
+                SANs decouple storage from individual servers, enabling centralized management, <strong>high
+                    availability</strong>, and efficient resource utilization in data centers.
+            </p>
+            
+            <h2>Storage Device Hierarchy</h2>
+            <p>
+                The <strong>storage</strong> hierarchy organizes memory and storage technologies by <em>speed</em>,
+                <em>cost</em>, and <em>capacity</em>.
+            </p>
+            <p>
+                At the top are registers and caches, followed by RAM, secondary storage, and archival media. This hierarchy
+                exploits <strong>locality</strong> to balance performance and cost.
+            </p>
+            
+            <h2>Symmetric Multiprocessing (SMP)</h2>
+            <p>
+                <strong>SMP</strong> is a multiprocessor architecture in which all CPUs share the same <em>memory</em> and have
+                equal access rights.
+            </p>
+            <p>
+                SMP simplifies programming and scheduling but may suffer from <strong>contention</strong> as the number of
+                processors increases.
+            </p>
+            
+            <h2>Uniform Memory Access (UMA)</h2>
+            <p>
+                <strong>UMA</strong> is a memory model where all processors experience the same <em>latency</em> when accessing
+                any memory location.
+            </p>
+            <p>
+                UMA is easier to manage and reason about than NUMA, but it limits <strong>scalability</strong> due to shared
+                memory bottlenecks.
+            </p>
+            
+            <h2>BSD UNIX</h2>
+            <p>
+                <b>BSD</b> UNIX refers to the <i>Berkeley</i> Software Distribution, a major branch of the UNIX operating system
+                lineage developed at the University of California, Berkeley.
+                BSD UNIX introduced foundational <b>innovations</b> that shaped modern operating systems, including advanced
+                <i>networking</i> via the TCP/IP stack,
+                the <b>socket</b> programming interface, and sophisticated <i>virtual</i> memory management.
+                Architecturally, BSD UNIX follows a <b>monolithic</b> kernel design, meaning core services such as process
+                management, file systems, and device drivers
+                operate within a single privileged address space.
+                BSD emphasizes <b>portability</b>, <i>stability</i>, and strong adherence to POSIX standards, enabling consistent
+                behavior across hardware platforms.
+                Modern descendants (FreeBSD, OpenBSD, NetBSD) preserve the BSD philosophy while emphasizing <b>performance</b>,
+                <i>security</i>, or <i>hardware</i> diversity.
+            </p>
+            
+            <h2>Cache Management</h2>
+            <p>
+                <b>Cache</b> management is the operating system and hardware strategy for controlling high-speed <i>memory</i>
+                layers that store frequently accessed data.
+                Its primary goal is to minimize <b>latency</b> by reducing slow main-memory accesses.
+                Cache management involves <b>placement</b> policies (where data is stored), <b>replacement</b> policies (which data
+                is evicted),
+                and <b>coherence</b> mechanisms that maintain consistency across multiple caches in multiprocessor systems.
+                Algorithms such as <i>Least</i> Recently Used (LRU) and <i>First</i>-In First-Out (FIFO) are employed to approximate
+                optimal behavior.
+                Effective cache management directly impacts <b>throughput</b>, <i>scalability</i>, and overall system efficiency.
+            </p>
+            
+            <h2>Caching</h2>
+            <p>
+                <b>Caching</b> is the general technique of storing <i>copies</i> of data in faster storage to accelerate future
+                access.
+                Caches exist at multiple layers, including <b>CPU</b> registers, processor caches, main memory buffers, and disk
+                caches.
+                Caching exploits <i>temporal</i> locality (recently accessed data is likely reused) and <i>spatial</i> locality
+                (nearby data is likely accessed).
+                However, caching introduces challenges such as <b>consistency</b>, <b>staleness</b>, and synchronization overhead.
+                Correct caching design balances <i>speed</i> gains against the complexity of maintaining data correctness.
+            </p>
+            
+            <h2>Client–Server</h2>
+            <p>
+                <b>Client–server</b> architecture is a distributed computing model where <i>clients</i> request services and
+                <i>servers</i> provide them.
+                Clients typically handle <b>presentation</b> and user interaction, while servers manage <i>resources</i>,
+                computation, and data storage.
+                Communication occurs through standardized <b>protocols</b> such as HTTP or RPC.
+                This model improves <i>scalability</i>, <b>security</b>, and centralized control but can introduce <i>latency</i>
+                and single points of failure.
+                Client–server architecture underpins modern web, database, and cloud systems.
+            </p>
+            
+            <h2>Data-Fetch Cycle</h2>
+            <p>
+                The <b>data</b>-fetch cycle describes how a processor retrieves <i>operands</i> from memory during instruction
+                execution.
+                After instruction decoding, the CPU determines required data addresses, often using <b>addressing</b> modes.
+                The memory subsystem is then accessed, potentially involving <i>cache</i> lookup, main memory access, or I/O if
+                paging occurs.
+                This cycle is critical to <b>performance</b> since memory access delays dominate execution time.
+                Optimizations such as <i>prefetching</i> and caching are designed to shorten the data-fetch cycle.
+            </p>
+            
+            <h2>Dual-Mode Operation</h2>
+            <p>
+                <b>Dual</b>-mode operation is a hardware-supported mechanism that distinguishes between <i>user</i> mode and
+                <i>kernel</i> mode.
+                User mode restricts access to critical instructions and hardware, ensuring <b>safety</b> and isolation.
+                Kernel mode grants full privileges, allowing the operating system to manage memory, devices, and processes.
+                Transitions occur via <b>system</b> calls, interrupts, or exceptions.
+                Dual-mode operation is fundamental to enforcing <i>protection</i> and maintaining system integrity.
+            </p>
+            
+            <h2>File</h2>
+            <p>
+                A <b>file</b> is a logical abstraction representing a persistent collection of <i>data</i> stored on secondary
+                storage.
+                Files encapsulate metadata such as <b>size</b>, permissions, ownership, and timestamps.
+                Operating systems provide file operations including <i>create</i>, read, write, seek, and delete.
+                Internally, files may be implemented using <b>contiguous</b>, linked, or indexed allocation strategies.
+                The file abstraction simplifies data management and supports long-term information storage.
+            </p>
+            
+            <h2>Handheld System</h2>
+            <p>
+                A <b>handheld</b> system is a portable computing device designed for <i>mobility</i>, such as smartphones or
+                tablets.
+                These systems emphasize <b>energy</b> efficiency, limited memory, and constrained processing power.
+                Operating systems for handheld systems implement aggressive <i>power</i> management and event-driven execution.
+                User interaction is optimized for <b>touch</b>, sensors, and intermittent connectivity.
+                Design trade-offs prioritize responsiveness and battery life over raw computational throughput.
+            </p>
+            
+            <h2>Instruction-Fetch Cycle</h2>
+            <p>
+                The <b>instruction</b>-fetch cycle is the process by which the CPU retrieves the next <i>instruction</i> to execute.
+                The program counter (PC) supplies the instruction address, which is fetched from memory into the instruction
+                register.
+                The PC is then <b>incremented</b> or updated via branching.
+                This cycle precedes decoding and execution and is repeated continuously during program execution.
+                Its efficiency directly influences <i>pipeline</i> performance and overall CPU speed.
+            </p>
+            
+            <h2>Interactive (Hands-On) Computer System</h2>
+            <p>
+                An <b>interactive</b> computer system allows continuous <i>user</i> input and immediate feedback.
+                Unlike batch systems, interactive systems prioritize <b>response</b> time over throughput.
+                Time-sharing mechanisms enable multiple users or tasks to share CPU resources fairly.
+                These systems rely on fast I/O, preemption, and efficient <i>scheduling</i>.
+                Examples include personal computers and modern graphical operating environments.
+            </p>
+            
+            <h2>Interrupt-Driven I/O Cycle</h2>
+            <p>
+                The <b>interrupt</b>-driven I/O cycle allows devices to signal the CPU when an operation completes.
+                Instead of polling, the CPU continues executing other tasks until an interrupt occurs.
+                The interrupt triggers a <i>context</i> switch to an interrupt handler routine.
+                This approach improves <b>efficiency</b> and CPU utilization.
+                Interrupt-driven I/O is essential for responsive multitasking systems.
+            </p>
+            
+            <h2>I/O Subsystem</h2>
+            <p>
+                The <b>I/O</b> subsystem manages communication between the computer and external devices.
+                It includes device drivers, interrupt handlers, and buffering mechanisms.
+                The subsystem abstracts device-specific details, providing a <i>uniform</i> interface to applications.
+                Key responsibilities include <b>scheduling</b>, error handling, and data transfer optimization.
+                A robust I/O subsystem ensures reliability and performance across diverse hardware.
+            </p>
+            
+            <h2>Job Pool and Job Scheduling</h2>
+            <p>
+                A <b>job</b> pool is a collection of processes awaiting execution in memory or secondary storage.
+                <b>Scheduling</b> determines the order and duration of CPU allocation to jobs.
+                Schedulers use criteria such as <i>priority</i>, fairness, and response time.
+                Algorithms include First-Come First-Served, Shortest Job First, and Round Robin.
+                Effective scheduling maximizes <b>utilization</b> and minimizes waiting time.
+            </p>
+            
+            <h2>Kernel Mode</h2>
+            <p>
+                <b>Kernel</b> mode is the privileged execution state of the CPU.
+                In this mode, the operating system can execute sensitive instructions and access all memory.
+                Kernel mode is essential for implementing <i>resource</i> management and protection.
+                Errors in kernel mode can compromise system <b>stability</b>.
+                Strict separation from user mode ensures reliability and security.
+            </p>
+            
+            <h2>Linux</h2>
+            <p>
+                <b>Linux</b> is an open-source, UNIX-like operating system kernel created by Linus Torvalds.
+                It follows a <i>monolithic</i> design with modular loadable components.
+                Linux supports multitasking, multiuser operation, and extensive hardware compatibility.
+                Its development model emphasizes <b>collaboration</b>, transparency, and rapid iteration.
+                Linux underpins servers, desktops, embedded systems, and cloud infrastructures worldwide.
+            </p>
+            <h2>Mass Storage</h2>
+            <p>
+                <strong>Mass</strong> <strong>storage</strong> refers to <i>non-volatile</i>, long-term data storage systems
+                designed to hold very large quantities of information persistently, even when power is removed. Unlike
+                <i>primary</i> memory (such as RAM), mass storage devices retain data indefinitely and serve as the foundational
+                layer for <strong>files</strong>, <strong>databases</strong>, and operating system components.
+            </p>
+            <p>
+                Mass storage technologies include <strong>magnetic</strong> disks (HDDs), <strong>solid-state</strong> drives
+                (SSDs), <strong>optical</strong> media, and <strong>networked</strong> storage systems. The operating system
+                abstracts these devices through a <i>block-oriented</i> interface, allowing software to read and write fixed-size
+                data blocks without direct knowledge of the underlying hardware. Key concerns include <strong>latency</strong>,
+                <strong>throughput</strong>, <strong>reliability</strong>, <strong>redundancy</strong>, and
+                <strong>scalability</strong>.
+            </p>
+            <p>
+                Advanced mass storage management involves <i>caching</i>, <i>buffering</i>, <i>journaling</i>, and
+                <i>fault-tolerance</i> mechanisms, ensuring data consistency, integrity, and availability even under system
+                failures.
+            </p>
+            
+            
+            
+            <h2>Memory Management</h2>
+            <p>
+                <strong>Memory</strong> <strong>management</strong> is the operating system function responsible for controlling how
+                <i>main</i> memory is allocated, used, shared, and reclaimed. It ensures that each <strong>process</strong> receives
+                sufficient memory while preventing unauthorized access to other processes’ address spaces.
+            </p>
+            <p>
+                This involves <strong>allocation</strong>, <strong>deallocation</strong>, <strong>address</strong> translation, and
+                <strong>protection</strong>. Modern systems rely on <i>virtual</i> memory, where logical addresses are mapped to
+                physical memory using <strong>paging</strong> or <strong>segmentation</strong>. This abstraction enables programs to
+                execute as if large, contiguous memory were available, regardless of physical limitations.
+            </p>
+            <p>
+                Memory management also handles <i>swapping</i>, <i>page</i> replacement algorithms (e.g., LRU, FIFO), and
+                <i>thrashing</i> prevention, balancing system performance with efficient resource utilization.
+            </p>
+            
+            
+            
+            <h2>Multimedia System</h2>
+            <p>
+                A <strong>multimedia</strong> <strong>system</strong> is a computing environment designed to process, synchronize,
+                and present multiple forms of media, including <i>audio</i>, <i>video</i>, <i>graphics</i>, and <i>text</i>. These
+                systems are highly sensitive to <strong>timing</strong> constraints and require predictable data delivery.
+            </p>
+            <p>
+                Operating systems supporting multimedia must provide <strong>real-time</strong> scheduling,
+                <strong>streaming</strong> support, and <strong>bandwidth</strong> management. Unlike conventional batch workloads,
+                multimedia tasks often require continuous data flow with minimal <i>jitter</i> and <i>latency</i>.
+            </p>
+            <p>
+                Hardware acceleration, priority scheduling, and buffer management are critical to maintaining smooth playback and
+                synchronization across different media streams.
+            </p>
+            
+            
+            
+            <h2>Multiprogramming</h2>
+            <p>
+                <strong>Multiprogramming</strong> is a technique where multiple programs reside in memory simultaneously, allowing
+                the CPU to switch between them to maximize <strong>utilization</strong>. When one program waits for I/O, the
+                processor executes another, reducing idle time.
+            </p>
+            <p>
+                This requires sophisticated <strong>scheduling</strong>, <strong>context</strong> switching, and
+                <strong>memory</strong> management. The operating system must maintain separate execution states for each program
+                and ensure fair access to shared resources.
+            </p>
+            <p>
+                Multiprogramming improves <i>throughput</i> and overall system efficiency but increases complexity in
+                synchronization, deadlock avoidance, and resource allocation.
+            </p>
+            
+            
+            
+            <h2>Network Operating System</h2>
+            <p>
+                A <strong>network</strong> <strong>operating</strong> <strong>system</strong> (NOS) provides services that enable
+                multiple computers to communicate, share resources, and coordinate activities over a network. It extends traditional
+                OS capabilities to distributed environments.
+            </p>
+            <p>
+                Key responsibilities include <strong>authentication</strong>, <strong>authorization</strong>, <strong>file</strong>
+                sharing, <strong>remote</strong> access, and <strong>communication</strong> protocols. The NOS ensures secure,
+                reliable, and efficient data exchange among networked nodes.
+            </p>
+            <p>
+                Examples include systems designed for client-server architectures, where centralized control and policy enforcement
+                are essential.
+            </p>
+            
+            
+            
+            <h2>Open-Source Operating System</h2>
+            <p>
+                An <strong>open-source</strong> <strong>operating</strong> <strong>system</strong> is one whose source code is
+                publicly available, allowing users to study, modify, and redistribute it. This model emphasizes <i>transparency</i>,
+                <i>collaboration</i>, and <i>community</i>-driven development.
+            </p>
+            <p>
+                Open-source systems promote <strong>security</strong> through peer review, <strong>innovation</strong> through
+                extensibility, and <strong>portability</strong> across diverse hardware platforms. Licensing frameworks, such as the
+                GNU GPL, govern usage and redistribution rights.
+            </p>
+            <p>
+                They play a crucial role in research, education, and large-scale infrastructure deployments.
+            </p>
+            
+            
+            
+            <h2>Peer-to-Peer</h2>
+            <p>
+                <strong>Peer-to-peer</strong> (P2P) refers to a distributed computing model in which each node functions as both a
+                <strong>client</strong> and a <strong>server</strong>. There is no centralized authority controlling communication
+                or resource allocation.
+            </p>
+            <p>
+                P2P systems emphasize <i>decentralization</i>, <i>scalability</i>, and <i>fault-tolerance</i>. Resources such as
+                files, processing power, and bandwidth are shared directly among peers.
+            </p>
+            <p>
+                This architecture is widely used in file-sharing networks, distributed ledgers, and collaborative platforms.
+            </p>
+            
+            
+            
+            <h2>Privileged Instructions</h2>
+            <p>
+                <strong>Privileged</strong> <strong>instructions</strong> are CPU operations restricted to execution in
+                <i>kernel</i> mode. They control sensitive system functions such as memory management, I/O control, and interrupt
+                handling.
+            </p>
+            <p>
+                By limiting these instructions to the operating system, hardware enforces <strong>security</strong> and
+                <strong>stability</strong>, preventing user-level programs from compromising the system.
+            </p>
+            <p>
+                Attempts to execute privileged instructions in user mode result in <i>traps</i> or <i>exceptions</i>, transferring
+                control to the OS.
+            </p>
+            
+            
+            
+            <h2>Process</h2>
+            <p>
+                A <strong>process</strong> is an instance of a program in execution, encompassing its <strong>code</strong>,
+                <strong>data</strong>, <strong>stack</strong>, and <strong>execution</strong> context. It represents the fundamental
+                unit of work in an operating system.
+            </p>
+            <p>
+                Each process has a unique identifier and operates within its own protected address space. Processes transition
+                through states such as <i>new</i>, <i>ready</i>, <i>running</i>, <i>waiting</i>, and <i>terminated</i>.
+            </p>
+            <p>
+                The OS manages processes to ensure isolation, fairness, and efficient execution.
+            </p>
+            
+            
+            
+            <h2>Process Management</h2>
+            <p>
+                <strong>Process</strong> <strong>management</strong> encompasses the creation, scheduling, synchronization, and
+                termination of processes. It ensures that multiple processes execute concurrently without interference.
+            </p>
+            <p>
+                Key mechanisms include <strong>context</strong> switching, <strong>inter-process</strong> communication (IPC), and
+                <strong>synchronization</strong> primitives such as semaphores and mutexes.
+            </p>
+            <p>
+                Effective process management balances responsiveness, throughput, and system stability.
+            </p>
+            
+            
+            
+            <h2>Program Counter</h2>
+            <p>
+                The <strong>program</strong> <strong>counter</strong> is a CPU register that holds the address of the next
+                instruction to be executed. It defines the <i>control</i> flow of a process.
+            </p>
+            <p>
+                During context switches, the operating system saves and restores the program counter to resume execution accurately.
+                Its correct management is essential for multitasking and exception handling.
+            </p>
+            <p>
+                Any corruption of the program counter leads to unpredictable execution behavior.
+            </p>
+            
+            
+            
+            <h2>Protection</h2>
+            <p>
+                <strong>Protection</strong> refers to mechanisms that control access to system resources, ensuring that processes
+                operate within authorized boundaries. It prevents accidental or malicious interference.
+            </p>
+            <p>
+                Protection is enforced through <strong>hardware</strong> support (such as memory protection units) and
+                <strong>software</strong> policies (such as access control lists).
+            </p>
+            <p>
+                It is a cornerstone of system reliability, security, and multi-user support.
+            </p>
+            
+            
+            
+            <h2>Real-Time Operating Systems</h2>
+            <p>
+                <strong>Real-time</strong> <strong>operating</strong> <strong>systems</strong> (RTOS) are designed to guarantee
+                deterministic responses to external events within strict time constraints. Correctness depends on both
+                <i>logical</i> results and <i>timing</i>.
+            </p>
+            <p>
+                RTOS classify tasks as <strong>hard</strong>, <strong>firm</strong>, or <strong>soft</strong> real-time, depending
+                on deadline criticality. They employ priority-based scheduling and minimal interrupt latency.
+            </p>
+            <p>
+                Such systems are used in embedded, medical, automotive, and aerospace applications.
+            </p>
+            
+            
+            
+            <h2>Response Time</h2>
+            <p>
+                <strong>Response</strong> <strong>time</strong> is the interval between a request submission and the system’s first
+                observable output. It is a key metric of <i>performance</i> and <i>usability</i>.
+            </p>
+            <p>
+                Low response time is critical in interactive and real-time systems, where user satisfaction and correctness depend
+                on immediate feedback.
+            </p>
+            <p>
+                Operating systems optimize response time through efficient scheduling, prioritization, and resource allocation.
+            </p>
+            <h2><strong>Security</strong></h2>
+            <p><em>Protection of systems and data from unauthorized actions.</em></p>
+            <p>
+                <strong>Security</strong> in operating systems refers to the comprehensive framework of policies, mechanisms, and
+                controls designed to protect computing resources against unauthorized access, misuse, modification, or destruction.
+                It encompasses both <strong>preventive</strong> and <strong>detective</strong> measures, ensuring that system
+                integrity, confidentiality, and availability are preserved.
+            </p>
+            <p>
+                At the operating system level, security is enforced through mechanisms such as <strong>authentication</strong>
+                (verifying identity), <strong>authorization</strong> (granting appropriate privileges), and
+                <strong>auditing</strong> (recording actions for accountability). The OS mediates all access to hardware resources,
+                files, memory, and processes, making it the central authority for enforcing security policies.
+            </p>
+            <p>
+                Modern operating systems must defend against both <strong>external</strong> threats (e.g., network-based attacks)
+                and <strong>internal</strong> threats (e.g., malicious or faulty programs). This includes isolating processes,
+                validating system calls, enforcing permissions, and protecting kernel data structures from corruption. A failure in
+                operating system security compromises all software layers above it.
+            </p>
+            
+            <h2><strong>Solaris</strong></h2>
+            <p><em>An enterprise-grade UNIX operating system.</em></p>
+            <p>
+                <strong>Solaris</strong> is a UNIX-based operating system originally developed by Sun Microsystems and later
+                maintained by Oracle. It is designed for high-performance, scalable, and mission-critical computing environments,
+                particularly in servers and enterprise systems.
+            </p>
+            <p>
+                One of Solaris’ defining characteristics is its advanced handling of <strong>concurrency</strong>,
+                <strong>scalability</strong>, and <strong>reliability</strong>. It introduced innovations such as the ZFS file
+                system, which integrates volume management with data integrity verification, and DTrace, a dynamic tracing framework
+                for real-time system diagnostics.
+            </p>
+            <p>
+                Solaris places strong emphasis on <strong>fault-tolerance</strong> and <strong>security</strong>, supporting
+                features such as role-based access control, fine-grained privilege separation, and container-based virtualization
+                (Solaris Zones). These capabilities make Solaris particularly suited for environments requiring predictable
+                performance and strong isolation guarantees.
+            </p>
+            
+            <h2><strong>Swapping</strong></h2>
+            <p><em>Temporary movement of processes between memory and disk.</em></p>
+            <p>
+                <strong>Swapping</strong> is a memory management technique in which entire processes are transferred between main
+                memory (RAM) and secondary storage (usually disk) to manage limited physical memory resources. When memory demand
+                exceeds available RAM, inactive or low-priority processes are swapped out to free space for active ones.
+            </p>
+            <p>
+                This mechanism allows the operating system to support more concurrent processes than would otherwise fit in memory,
+                at the cost of increased <strong>latency</strong> due to slower disk access. Swapping decisions are typically based
+                on scheduling policies, process state, and memory pressure.
+            </p>
+            <p>
+                Although classical swapping moves whole processes, modern systems more commonly use <strong>paging</strong> and
+                <strong>virtual memory</strong>, which operate at finer granularity. Nevertheless, the concept of swapping remains
+                fundamental to understanding how operating systems balance performance with resource constraints.
+            </p>
+            
+            <h2><strong>Time-sharing</strong> / <strong>Multitasking</strong></h2>
+            <p><em>Illusion of simultaneous execution.</em></p>
+            <p>
+                <strong>Time-sharing</strong>, also known as <strong>multitasking</strong>, is an operating system technique that
+                enables multiple processes to share a single CPU by rapidly switching execution among them. Each process is
+                allocated a small unit of CPU time called a <strong>time-slice</strong> or <strong>quantum</strong>.
+            </p>
+            <p>
+                Through frequent context switches, the operating system creates the illusion that programs are executing
+                simultaneously, even though the CPU executes only one instruction stream at a time. This is essential for
+                interactive systems, where responsiveness is critical.
+            </p>
+            <p>
+                Effective time-sharing depends on <strong>scheduling</strong> algorithms that balance fairness, throughput, and
+                response time. Poor scheduling can lead to starvation or excessive overhead, whereas well-designed multitasking
+                maximizes CPU utilization while maintaining acceptable performance for all users.
+            </p>
+            
+            <h2><strong>Timer</strong></h2>
+            <p><em>Hardware-enforced control of execution time.</em></p>
+            <p>
+                A <strong>timer</strong> is a hardware device that generates interrupts at regular intervals or after a specified
+                duration. Operating systems rely on timers to regain control of the CPU from executing processes, ensuring that no
+                single process monopolizes system resources.
+            </p>
+            <p>
+                Timers are essential for implementing <strong>preemption</strong> in multitasking systems. When a timer interrupt
+                occurs, the CPU transfers control to the operating system, allowing it to perform scheduling decisions, update
+                accounting information, or handle time-based events.
+            </p>
+            <p>
+                Without timers, a process could execute indefinitely, undermining system responsiveness and fairness. Thus, timers
+                form a critical foundation for modern operating system control and scheduling.
+            </p>
+            
+            <h2><strong>Trap</strong> / <strong>Exception</strong></h2>
+            <p><em>Controlled transfer from user code to the kernel.</em></p>
+            <p>
+                A <strong>trap</strong> or <strong>exception</strong> is a synchronous event that alters normal program execution,
+                transferring control to the operating system. Traps may occur intentionally, such as when a program invokes a system
+                call, or unintentionally, such as during division by zero or invalid memory access.
+            </p>
+            <p>
+                Exceptions provide a structured mechanism for handling <strong>errors</strong>, enforcing
+                <strong>protection</strong>, and enabling communication between user programs and the kernel. When an exception
+                occurs, the processor saves the current state and executes a predefined handler.
+            </p>
+            <p>
+                This mechanism ensures that sensitive operations are performed only in controlled environments, preserving system
+                stability and security while allowing programs to request essential services.
+            </p>
+            
+            <h2><strong>User</strong> <strong>Mode</strong></h2>
+            <p><em>Restricted execution environment.</em></p>
+            <p>
+                <strong>User</strong> <strong>mode</strong> is a CPU execution mode in which application programs run with limited
+                privileges. In this mode, direct access to hardware, critical memory regions, and privileged instructions is
+                prohibited.
+            </p>
+            <p>
+                The separation between user mode and kernel mode is a cornerstone of operating system <strong>protection</strong>.
+                It prevents faulty or malicious programs from compromising the entire system by restricting their capabilities.
+            </p>
+            <p>
+                When a user-mode program requires a privileged operation, it must request the service through a system call, which
+                safely transitions execution into kernel mode via a controlled trap.
+            </p>
+            
+            <h2><strong>Virtual</strong> <strong>Memory</strong></h2>
+            <p><em>Abstraction of large, continuous memory.</em></p>
+            <p>
+                <strong>Virtual</strong> <strong>memory</strong> is a memory management technique that provides processes with the
+                illusion of a large, contiguous address space, independent of the actual size and layout of physical memory. It
+                decouples logical addresses from physical addresses through address translation.
+            </p>
+            <p>
+                This abstraction enables efficient memory utilization by allowing only actively used portions of a program to reside
+                in physical memory, while inactive portions are stored on disk. Techniques such as <strong>paging</strong> and
+                <strong>segmentation</strong> implement this functionality.
+            </p>
+            <p>
+                Virtual memory also enhances <strong>protection</strong> and <strong>isolation</strong>, ensuring that processes
+                cannot access each other’s memory. By combining flexibility, efficiency, and safety, virtual memory is one of the
+                most significant innovations in operating system design.
+            </p>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+<script>
+    // Load header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+
+    // Load footer
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+</html>
