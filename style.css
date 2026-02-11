@@ -1,4 +1,4 @@
-/* style.css */
+/* Body styling */
 body {
   background-color: white;
   font-family: Arial, sans-serif;
@@ -6,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* Banner */
 .banner {
   background: linear-gradient(
     to right,
@@ -19,51 +20,27 @@ body {
   font-weight: bold;
 }
 
-.content {
-  padding: 40px 20px;
-  color: #333;
-}
-
-.btn {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #007bff;
-}
-
-/* Base (mobile-first) */
+/* Main content (mobile-first) */
 main {
-  padding: 0 5%; /* Small padding on mobile */
-  max-width: 100%; /* Ensure it doesn't overflow */
-  margin: 0 auto; /* Center content */
+  padding: 0 5%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Medium screens and up */
-@media (min-width: 768px) {
+@media (min-width: 765px) {
   main {
-    padding: 0 18%; /* Wider padding on tablets and larger */
-    max-width: 1200px; /* Optional max width */
+    padding: 0 26%;
+    max-width: 1200px;
   }
 }
 
-/* GitHub-style header in top corner */
+/* GitHub-style header */
 .github-header {
   position: fixed;
   top: 10px;
   right: 10px;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.834
-  );
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   padding: 5px 10px;
   box-shadow: 0 2px 6px
@@ -72,49 +49,41 @@ main {
 }
 
 .github-header a {
-  text-decoration: none;
-  color: #000000;
-
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
+  color: #000;
+  flex-wrap: nowrap;
 }
 
+/* Profile pic */
 .profile-pic {
   width: 30px;
   height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  min-width: 24px;
+  min-height: 24px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Existing banner styling */
-.banner {
-  background: linear-gradient(
-    to right,
-    #28a745,
-    #007bff
-  );
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  font-size: 48px;
-  font-weight: bold;
-}
-
-/* Main content (mobile-first readable width) */
-main {
-  padding: 0 5%;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  main {
-    padding: 0 18%;
-    max-width: 1200px;
+/* Adjust GitHub header for very small screens */
+@media (max-width: 400px) {
+  .github-header {
+    padding: 4px 6px;
+  }
+  .github-header a {
+    gap: 4px;
+  }
+  .profile-pic {
+    width: 24px;
+    height: 24px;
   }
 }
 
-/* Button styling */
+/* Buttons */
 .btn {
   background-color: #28a745;
   color: white;
@@ -129,7 +98,7 @@ main {
   background-color: #007bff;
 }
 
-/* Breadcrumb styling */
+/* Breadcrumb */
 .breadcrumb {
   font-size: 0.9rem;
   margin: 15px 0;
@@ -138,7 +107,7 @@ main {
 
 .breadcrumb a {
   text-decoration: none;
-  color: #28a745; /* Green link to match theme */
+  color: #28a745;
 }
 
 .breadcrumb a:hover {
@@ -146,5 +115,11 @@ main {
 }
 
 .breadcrumb span {
-  color: #333; /* Current page */
+  color: #333;
+}
+
+/* Content padding */
+.content {
+  padding: 20px 0;
+  color: #333;
 }
