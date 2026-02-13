@@ -123,3 +123,122 @@ main {
   padding: 20px 0;
   color: #333;
 }
+
+* Clean section styling */ section {
+  margin: 30px 0;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px
+    rgba(0, 0, 0, 0.05);
+}
+
+/* Section headings */
+section h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+section h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Paragraph spacing */
+section p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Lists inside sections */
+section ul,
+section ol {
+  margin: 10px 0 10px 20px;
+}
+
+section li {
+  margin: 6px 0;
+}
+
+/* Horizontal rule cleanup */
+section hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Fix summary arrow alignment */
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Remove default spacing from heading inside summary */
+details summary h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* Optional: add spacing between arrow and text */
+details summary::marker {
+  margin-right: 8px;
+}
+
+/* Make summary clearly interactive */
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none; /* removes default marker */
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 10px 0;
+}
+
+/* Custom arrow */
+details summary::before {
+  content: "▶";
+  font-size: 0.9rem;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Hover effect for clarity */
+details summary:hover {
+  color: #007bff;
+}
+
+/* Video container box styling */
+video {
+  max-width: 100%;
+  width: 640px; /* default width */
+  height: 360px; /* default height (16:9 ratio) */
+  margin: 20px auto; /* center horizontally */
+  padding: 10px;
+  border: 2px solid #1d1d1d15;
+  border-radius: 10px;
+  background-color: #000000;
+  box-shadow: 0 4px 12px
+    rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Make video inside container responsive */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill box while maintaining aspect ratio */
+  border-radius: 8px;
+}
