@@ -1,0 +1,49 @@
+
+    Java virtual machine
+    just-in-time (JIT) compiler
+    kernel
+    layered approach
+    Mach operating system
+    microkernel approach
+    modular kernel
+    operating-system structure
+    simulation
+    virtual machine and virtualization
+    VMware architecture
+
+    application programming interface (API)
+    operating-system services helpful to users
+        command interpreter
+        communications
+        error detection
+        file-system manipulation
+        graphical user interface (GUI)
+        I/O operations
+        program execution
+    operating-system functions that ensure the efficient operation of the system itself
+        accounting
+        protection and security
+        resource allocation
+    system call
+    system-call interface
+    systems programs
+        communication programs such as a web browser
+        compilers, interpreters, assemblers, and debuggers
+        file manager programs and text editors
+        logging, registry, system information viewer
+    types of system calls
+
+
+
+    Reflect on your understanding of the essential services provided by an operating system and how system calls work to provide these services.
+        What are the three different advantage points for considering operating systems?
+        What services are designed for performance? What services are designed for usability?
+        What are system calls? How does a system call work in a dual-mode context?
+        How do you see the relationship between Linux system calls and a standard C library?
+    Complete the interactive questions in Sections 2.1 to 2.5 of your eText.
+
+    Reflect on your understanding of kernel structure.
+        What do you think about operating systems based on microkernel structure compared to their layered and modular kernel counterparts?
+        Why is it important to separate kernel from user space?
+        How are user mode and kernel mode issues dealt with under a virtual machine environment?
+    Complete the interactive questions in Sections 2.7 and 2.8 of your eText.

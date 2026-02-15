@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System Concepts with Answers</title>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="../index.html">Index</a> &gt;
+            <span>Section 2</span>
+        </nav>
+
+        <div class="content">
+            <h1>Operating System Structure, Services, and System Calls</h1>
+            <hr>
+        </div>
+
+        <div id="content">
+
+            <details>
+                <summary>
+                    <h2>Key Concepts</h2>
+                </summary>
+
+                <h3>Java Virtual Machine (JVM)</h3>
+                <p>Executes Java bytecode, providing platform independence and runtime management. Ensures programs run
+                    the same across devices.</p>
+
+                <h3>Just-in-Time (JIT) Compiler</h3>
+                <p>Converts bytecode to native machine code at runtime to improve execution speed.</p>
+
+                <h3>Kernel</h3>
+                <p>The core of the OS responsible for managing CPU, memory, I/O, and system calls. Acts as the bridge
+                    between hardware and software.</p>
+
+                <h3>Layered Approach</h3>
+                <p>OS is organized in layers; each layer provides services to the one above and uses services from the
+                    layer below. Easier maintenance and debugging.</p>
+
+                <h3>Mach Operating System</h3>
+                <p>An OS example using the microkernel approach for modularity and portability.</p>
+
+                <h3>Microkernel Approach</h3>
+                <p>Minimal kernel with essential services only. Other services run in user space for better reliability
+                    and security.</p>
+
+                <h3>Modular Kernel</h3>
+                <p>Kernel supports dynamically loadable modules to extend functionality without rebooting the system.
+                </p>
+
+                <h3>Operating-System Structure</h3>
+                <p>Defines how the OS components, services, and interfaces are organized.</p>
+
+                <h3>Simulation, Virtual Machine, and Virtualization</h3>
+                <p>Techniques to run multiple OS instances or environments on a single physical machine.</p>
+
+                <h3>VMware Architecture</h3>
+                <p>An example virtualization platform using hypervisors to host multiple guest OSs.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h2>Operating-System Services</h2>
+                </summary>
+
+                <h3>Application Programming Interface (API)</h3>
+                <p>Provides routines and protocols for programs to request OS services.</p>
+
+                <h3>Services Helpful to Users</h3>
+                <ul>
+                    <li>Command interpreter (shell) – Executes user commands.</li>
+                    <li>Communications – Supports networking and messaging.</li>
+                    <li>Error detection – Reports hardware or software issues.</li>
+                    <li>File-system manipulation – Access, modify, and organize files.</li>
+                    <li>Graphical User Interface (GUI) – Provides visual interface for users.</li>
+                    <li>I/O operations – Facilitates input/output with devices.</li>
+                    <li>Program execution – Loads, runs, and manages user programs.</li>
+                </ul>
+
+                <h3>Services for Efficient System Operation</h3>
+                <ul>
+                    <li>Accounting – Tracks resource usage.</li>
+                    <li>Protection and security – Ensures only authorized access.</li>
+                    <li>Resource allocation – Manages CPU, memory, and device usage.</li>
+                </ul>
+
+                <h3>System Call</h3>
+                <p>A controlled mechanism for user programs to request OS services. Switches CPU from user mode to
+                    kernel mode to execute privileged operations.</p>
+
+                <h3>System-Call Interface</h3>
+                <p>The interface that maps high-level API calls to kernel operations.</p>
+
+                <h3>Systems Programs</h3>
+                <ul>
+                    <li>Communication programs (e.g., web browsers) – Facilitate network operations.</li>
+                    <li>Compilers, interpreters, assemblers, and debuggers – Translate and debug code.</li>
+                    <li>File managers and text editors – Provide file operations and editing tools.</li>
+                    <li>Logging, registry, system information tools – Help maintain and monitor system state.</li>
+                </ul>
+
+                <h3>Types of System Calls</h3>
+                <ul>
+                    <li>Process control – create, terminate, or manage processes.</li>
+                    <li>File management – open, read, write, close files.</li>
+                    <li>Device management – request I/O operations, allocate devices.</li>
+                    <li>Information maintenance – get/set system data, time, or status.</li>
+                    <li>Communications – send/receive messages between processes or systems.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>
+                    <h2>Reflection Questions with Answers</h2>
+                </summary>
+
+                <h3>Understanding OS Services & System Calls</h3>
+                <ul>
+                    <li><strong>Three advantage points:</strong> usability (user-friendly services), efficiency
+                        (resource management), portability (hardware abstraction).</li>
+                    <li><strong>Performance services:</strong> resource allocation, accounting, protection/security.
+                        <strong>Usability services:</strong> GUI, command interpreter, file-system operations, program
+                        execution.</li>
+                    <li><strong>System calls:</strong> Mechanism for user programs to request kernel services. Works by
+                        switching CPU from user mode to kernel mode, executing privileged operations, then returning to
+                        user mode.</li>
+                    <li><strong>Linux system calls vs C library:</strong> The C library wraps system calls in standard
+                        functions, providing a higher-level, portable interface while the actual syscall executes in the
+                        kernel.</li>
+                </ul>
+
+                <h3>Kernel Structure Reflection</h3>
+                <ul>
+                    <li>Microkernels move services to user space for reliability; layered kernels organize functionality
+                        hierarchically; modular kernels allow dynamic extension. Microkernels are smaller but may have
+                        performance overhead due to more inter-process communication.</li>
+                    <li>Separating kernel and user space protects system stability, prevents accidental or malicious
+                        interference, and enforces privilege boundaries.</li>
+                    <li>In virtual machines, user-mode programs and guest OS kernel calls are managed by the hypervisor.
+                        Privileged instructions are trapped and handled safely to emulate hardware behavior.</li>
+                </ul>
+
+                <p>Complete the interactive questions in Sections 2.1–2.5 and 2.7–2.8 of your eText for hands-on
+                    understanding.</p>
+            </details>
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('../header.html').then(r => r.text()).then(data => document.getElementById('header').innerHTML = data);
+        fetch('../footer.html').then(r => r.text()).then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+
+</html>
