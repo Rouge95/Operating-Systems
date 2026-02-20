@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processes, Scheduling, and IPC</title>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="../index.html">Index</a> &gt;
+            <span>Section 3</span>
+        </nav>
+
+        <div class="content">
+            <h1>Processes, Process Scheduling, and Interprocess Communication</h1>
+            <hr>
+        </div>
+
+        <div id="content">
+
+            <!-- ================= OVERVIEW ================= -->
+            <details open>
+                <summary>
+                    <h2>Overview</h2>
+                </summary>
+
+                <p>
+                    This section develops the foundation of process management in modern operating systems.
+                    It begins with the notion of a <strong>process</strong> as the basic unit of execution,
+                    then examines process states, the Process Control Block (PCB), and context switching.
+                </p>
+
+                <p>
+                    From this basis, we study <strong>process scheduling</strong>—the mechanism by which the CPU
+                    is allocated among competing processes. We then move to <strong>interprocess communication
+                        (IPC)</strong>,
+                    shared memory, message passing, and client–server communication mechanisms such as sockets,
+                    pipes, and remote procedure calls (RPC).
+                </p>
+
+                <h3>Here’s what you really need to remember:</h3>
+                <ul>
+                    <li>A process is an active program with execution context.</li>
+                    <li>PCB enables safe switching between processes.</li>
+                    <li>Schedulers control the degree of multiprogramming.</li>
+                    <li>IPC enables cooperation and data exchange.</li>
+                    <li>Client–server communication builds on IPC mechanisms.</li>
+                </ul>
+            </details>
+
+            <!-- ================= SECTION OBJECTIVES ================= -->
+            <details>
+                <summary>
+                    <h2>Section Objectives</h2>
+                </summary>
+                <ul>
+                    <li>Define process, process states, and process scheduling.</li>
+                    <li>Distinguish processes from programs.</li>
+                    <li>Explain state transitions during execution.</li>
+                    <li>Describe the role of PCB in context switching.</li>
+                    <li>Interpret queueing diagrams of process scheduling.</li>
+                    <li>Explain process creation and termination.</li>
+                    <li>Define interprocess communication (IPC).</li>
+                    <li>Compare shared memory and message passing.</li>
+                    <li>Explain IPC realization in POSIX and Windows systems.</li>
+                    <li>Describe sockets, RPCs, pipes, and named pipes.</li>
+                    <li>Apply IPC APIs in system programming.</li>
+                </ul>
+            </details>
+
+            <!-- ================= PROCESS CONCEPT ================= -->
+            <details>
+                <summary>
+                    <h2>3.1 Process Concept</h2>
+                </summary>
+
+                <h3>Process vs Program</h3>
+                <ul>
+                    <li><strong>Program:</strong> Passive file stored on disk.</li>
+                    <li><strong>Process:</strong> Active instance of a program in execution.</li>
+                </ul>
+
+                <h3>Main Features of a Process</h3>
+                <ul>
+                    <li>Program counter (current instruction).</li>
+                    <li>CPU registers.</li>
+                    <li>Stack (function calls, local variables).</li>
+                    <li>Heap (dynamic memory).</li>
+                    <li>Data section (global variables).</li>
+                </ul>
+
+                <h3>Process States</h3>
+                <ul>
+                    <li><strong>New</strong> – Being created.</li>
+                    <li><strong>Ready</strong> – Waiting for CPU.</li>
+                    <li><strong>Running</strong> – Currently executing.</li>
+                    <li><strong>Waiting</strong> – Waiting for I/O or event.</li>
+                    <li><strong>Terminated</strong> – Finished execution.</li>
+                </ul>
+
+                <h3>State Transitions</h3>
+                <p>
+                    Processes move between states based on scheduling decisions,
+                    I/O requests, interrupts, or completion.
+                </p>
+            </details>
+
+            <!-- ================= PCB & CONTEXT SWITCH ================= -->
+            <details>
+                <summary>
+                    <h2>Process Control Block (PCB) & Context Switch</h2>
+                </summary>
+
+                <h3>What is PCB?</h3>
+                <p>
+                    A data structure maintained by the OS containing all information
+                    required to manage a process.
+                </p>
+
+                <h3>PCB Includes:</h3>
+                <ul>
+                    <li>Process state</li>
+                    <li>Program counter</li>
+                    <li>CPU registers</li>
+                    <li>CPU scheduling information (priority, queue pointers)</li>
+                    <li>Memory management info (base, limit, page tables)</li>
+                    <li>I/O status information</li>
+                    <li>Accounting information</li>
+                </ul>
+
+                <h3>Context Switch</h3>
+                <p>
+                    Occurs when CPU switches from one process to another.
+                    The OS saves the current process state in its PCB and restores
+                    another process state from its PCB.
+                </p>
+
+                <p><strong>Important:</strong> Context switching is pure overhead—no useful work is performed.</p>
+            </details>
+
+            <!-- ================= PROCESS SCHEDULING ================= -->
+            <details>
+                <summary>
+                    <h2>3.2 Process Scheduling</h2>
+                </summary>
+
+                <h3>Degree of Multiprogramming</h3>
+                <p>
+                    Number of processes in memory at once. Higher degree improves CPU utilization,
+                    but increases scheduling complexity.
+                </p>
+
+                <h3>Scheduling Queues</h3>
+                <ul>
+                    <li><strong>Job queue</strong> – All processes in the system.</li>
+                    <li><strong>Ready queue</strong> – Processes ready for CPU.</li>
+                    <li><strong>Device queue</strong> – Processes waiting for I/O.</li>
+                </ul>
+
+                <h3>Types of Schedulers</h3>
+                <ul>
+                    <li><strong>Long-term (Job scheduler):</strong> Controls degree of multiprogramming.</li>
+                    <li><strong>Short-term (CPU scheduler):</strong> Selects next ready process for execution.</li>
+                    <li><strong>Medium-term scheduler:</strong> Performs swapping; suspends or resumes processes.</li>
+                </ul>
+
+                <h3>Swapping</h3>
+                <p>
+                    Temporarily moving processes between main memory and secondary storage
+                    to balance load.
+                </p>
+            </details>
+
+            <!-- ================= PROCESS OPERATIONS ================= -->
+            <details>
+                <summary>
+                    <h2>3.3 Operations on Processes</h2>
+                </summary>
+
+                <h3>Process Creation</h3>
+                <p>
+                    In UNIX/Linux systems, processes are created using <code>fork()</code>.
+                </p>
+
+                <ul>
+                    <li>Parent process calls <code>fork()</code>.</li>
+                    <li>A child process is created.</li>
+                    <li>Child receives copy of parent's address space.</li>
+                    <li>Often followed by <code>exec()</code> to load a new program.</li>
+                </ul>
+
+                <h3>Process Termination</h3>
+                <ul>
+                    <li>Normal completion (<code>exit()</code>).</li>
+                    <li>Error exit.</li>
+                    <li>Killed by another process.</li>
+                </ul>
+            </details>
+
+            <!-- ================= IPC ================= -->
+            <details>
+                <summary>
+                    <h2>3.4–3.6 Interprocess Communication (IPC)</h2>
+                </summary>
+
+                <h3>Why Process Cooperation?</h3>
+                <ul>
+                    <li>Information sharing</li>
+                    <li>Computation speedup</li>
+                    <li>Modularity</li>
+                    <li>Convenience</li>
+                </ul>
+
+                <h3>Two IPC Models</h3>
+
+                <h4>1. Shared Memory</h4>
+                <ul>
+                    <li>Processes share memory region.</li>
+                    <li>Fast communication.</li>
+                    <li>Requires synchronization (semaphores, mutex).</li>
+                    <li>Example: POSIX shared memory.</li>
+                </ul>
+
+                <h4>2. Message Passing</h4>
+                <ul>
+                    <li>Processes exchange messages.</li>
+                    <li>No shared address space.</li>
+                    <li>Safer but slower.</li>
+                    <li>Used in distributed systems.</li>
+                </ul>
+
+                <h3>Buffering Types</h3>
+                <ul>
+                    <li>Zero capacity (no buffering).</li>
+                    <li>Bounded capacity.</li>
+                    <li>Unbounded capacity.</li>
+                </ul>
+            </details>
+
+            <!-- ================= CLIENT SERVER ================= -->
+            <details>
+                <summary>
+                    <h2>3.7–3.8 Client–Server Communication</h2>
+                </summary>
+
+                <h3>Pipes</h3>
+                <ul>
+                    <li>Unidirectional communication.</li>
+                    <li>Parent-child processes.</li>
+                </ul>
+
+                <h3>Named Pipes</h3>
+                <ul>
+                    <li>Bidirectional.</li>
+                    <li>Unrelated processes can communicate.</li>
+                </ul>
+
+                <h3>Sockets</h3>
+                <ul>
+                    <li>Endpoint for network communication.</li>
+                    <li>Used in distributed systems.</li>
+                </ul>
+
+                <h3>RPC (Remote Procedure Call)</h3>
+                <ul>
+                    <li>Invokes procedure on remote system.</li>
+                    <li>Uses stubs and ports.</li>
+                    <li>Includes ACK mechanisms.</li>
+                </ul>
+
+                <h3>Key Distinction</h3>
+                <p>
+                    IPC enables communication between processes.
+                    RPC extends IPC across network boundaries.
+                </p>
+            </details>
+
+            <!-- ================= STUDY QUESTIONS ================= -->
+            <details>
+                <summary>
+                    <h2>Study Questions</h2>
+                </summary>
+
+                <ul>
+                    <li>What are the essential attributes of a process?</li>
+                    <li>Why is PCB necessary for context switching?</li>
+                    <li>Why do we need three schedulers?</li>
+                    <li>How does fork() differ from exec()?</li>
+                    <li>Why is synchronization required in shared memory?</li>
+                    <li>How do sockets differ from pipes?</li>
+                </ul>
+            </details>
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('../header.html').then(r => r.text()).then(data => document.getElementById('header').innerHTML = data);
+        fetch('../footer.html').then(r => r.text()).then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+
+</html>
